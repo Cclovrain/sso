@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Module</title>
+</head>
+<body>
+    <h1>Welcome to Blog Page !</h1>
+    <span>
+        <a th:if="${session.loginUser == null}" href="http://127.0.0.1:9000/view/login?target=http://127.0.0.1:9012/view/index">login</a>
+        <a th:unless="${session.loginUser == null}" href=http://127.0.0.1:9000/login/loginOut?target=http://127.0.0.1:9012/view/index>logout</a>
+    </span>
+
+    <a href="http://127.0.0.1:9000/view/login?target=http://127.0.0.1:9010/view/index">index</a>
+
+
+    <p th:unless="${session.loginUser == null}">
+        <span style="color:deeppink" th:text="${session.loginUser.username}"></span> has already logged in.<br></br>
+        <br></br>
+        id: <span style="color:deeppink" th:text="${session.loginUser.id}"></span><br></br>
+        username: <span style="color:deeppink" th:text="${session.loginUser.username}"></span><br></br>
+        blogUrl: <span style="color:deeppink" th:text="${session.loginUser.blogUrl}"></span><br></br>
+    </p>
+</body>
+</html>
