@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.1.3.RELEASE"
+    }
+}
+subprojects {
+    group 'com.sso'
+    version '1.0-SNAPSHOT'
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'org.springframework.boot'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        compile 'org.springframework.boot:spring-boot-starter-web'
+        annotationProcessor 'org.projectlombok:lombok:1.18.2'
+        compileOnly 'org.projectlombok:lombok:1.18.2'
+        compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+        compile("org.springframework.boot:spring-boot-devtools")
+    }
+}
+
+

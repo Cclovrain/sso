@@ -1,0 +1,6 @@
+rootProject.name = 'sso-user-cookie'
+include 'sso-main'
+include 'sso-course'
+include 'sso-blog'
+include 'sso-login'
+
